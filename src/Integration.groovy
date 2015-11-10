@@ -1,5 +1,6 @@
-package robot
+
 import robot.Robot
+import robot.Stroke;
 import robot.Direction
 import robot.Distance
 import robot.DistanceUnit
@@ -7,6 +8,7 @@ import robot.Time
 import robot.TimeUnit
 import robot.Animals
 import robot.Eye
+import robot.Mode;
 
 my_robot = new Robot()
 
