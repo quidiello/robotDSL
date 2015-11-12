@@ -81,5 +81,26 @@ public class Robot {
 		
 		this
 	}
+	
+	def play(info, inst) {
+		println ""
+		print "Play the $inst"
+		
+		if(info.tempo != null) {
+			this.tempo(info.tempo)
+		}
+		if(info.with != null) {
+			this.with(info.with)
+		}
+		if(info.during != null) {
+			this.during(info.during)
+		}
+		
+		this
+	}
+	
+	def tempo(Tempo tempo) {
+		print " $tempo"
+	}
 
 }

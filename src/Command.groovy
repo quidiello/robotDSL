@@ -5,3 +5,4 @@ swim left, stroke: butterfly, with: dolphins, during: 10.minutes
 jump (left) * 3
 said shout, "Hello World!"
 wink eye.left
+play bagpipes, during: 30.minutes, tempo: andante >> allegro

@@ -1,6 +1,6 @@
 
 import robot.Robot
-import robot.Stroke;
+import robot.Stroke
 import robot.Direction
 import robot.Distance
 import robot.DistanceUnit
@@ -8,7 +8,10 @@ import robot.Time
 import robot.TimeUnit
 import robot.Animals
 import robot.Eye
-import robot.Mode;
+import robot.Mode
+import robot.Instrument
+import robot.Tempos
+import robot.Tempo
 
 my_robot = new Robot()
 
@@ -40,6 +43,20 @@ def binding = new Binding([
 	breaststroke: Stroke.breaststroke,
 	wink: my_robot.&wink,
 	eye: Eye,
+	piano: Instrument.piano,
+	fiddle: Instrument.fiddle,
+	flute: Instrument.flute,
+	drum: Instrument.drum,
+	bagpipes: Instrument.bagpipes,
+	play: my_robot.&play,
+	adagio: Tempos.adagio,
+	allegro: new Tempo(Tempos.allegro.toString()),
+	allegrissimo: new Tempo(Tempos.allegrissimo.toString()),
+	moderato: new Tempo(Tempos.moderato.toString()),
+	andante: new Tempo(Tempos.andante.toString()),
+	vivace: new Tempo(Tempos.vivace.toString()),
+	presto: new Tempo(Tempos.presto.toString()),
+	prestissimo: new Tempo(Tempos.prestissimo.toString()),
 ])
 
 Integer.metaClass.getCm = {
