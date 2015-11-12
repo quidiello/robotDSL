@@ -58,8 +58,9 @@ def binding = new Binding([
 	vivace: new Tempo(Tempos.vivace.toString()),
 	presto: new Tempo(Tempos.presto.toString()),
 	prestissimo: new Tempo(Tempos.prestissimo.toString()),
-	wake: my_robot.&wake,
-	Sleep: my_robot.&sleep
+	status: my_robot.&status,
+	wake: Status.active,
+	sleep: Status.sleep
 ])
 
 Integer.metaClass.getCm = {

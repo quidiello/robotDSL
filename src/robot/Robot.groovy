@@ -138,6 +138,19 @@ public class Robot {
 		print " $tempo"
 	}
 	
+	def status(Status status) {
+		switch(status) {
+			case Status.sleep:
+				this.sleep()
+				break
+			case Status.active:
+				this.wake()
+				break
+		}
+		
+		this
+	}
+	
 	def sleep() {
 		if(this.status == Status.sleep.toString()) {
 			println ""
