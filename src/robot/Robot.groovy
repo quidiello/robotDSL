@@ -2,7 +2,18 @@ package robot;
 
 public class Robot {
 	
+	String status
+	
+	Robot(String status) {
+		this.status = status
+	}
+	
 	def move(info, Direction dir) {
+		if(this.status == Status.sleep.toString()) {
+			this.sleeping("move")
+			return this
+		}
+		
 		println ""
 		print "Moving $dir"
 		
@@ -24,6 +35,11 @@ public class Robot {
 	}
 	
 	def swim(info, Direction dir) {
+		if(this.status == Status.sleep.toString()) {
+			this.sleeping("swim")
+			return this
+		}
+		
 		println ""
 		print "Swimming $dir"
 
@@ -46,6 +62,10 @@ public class Robot {
 	}
 	
 	def jump(Direction dir) {
+		if(this.status == Status.sleep.toString()) {
+			this.sleeping("jump")
+			return this
+		}
 		println ""
 		print "Jump $dir"
 		
@@ -58,6 +78,11 @@ public class Robot {
 	}
 	
 	def said(Mode mode, String s) {
+		if(this.status == Status.sleep.toString()) {
+			this.sleeping("speak")
+			return this
+		}
+		
 		println ""
 		switch(mode.toString()) {
 			case "whisper":
@@ -76,6 +101,11 @@ public class Robot {
 	}
 	
 	def wink(eye) {
+		if(this.status == Status.sleep.toString()) {
+			this.sleeping("wink")
+			return this
+		}
+		
 		println ""
 		print "Wink $eye eye"
 		
@@ -83,6 +113,11 @@ public class Robot {
 	}
 	
 	def play(info, inst) {
+		if(this.status == Status.sleep.toString()) {
+			this.sleeping("play")
+			return this
+		}
+		
 		println ""
 		print "Play the $inst"
 		
@@ -101,6 +136,35 @@ public class Robot {
 	
 	def tempo(Tempo tempo) {
 		print " $tempo"
+	}
+	
+	def sleep() {
+		if(this.status == Status.sleep.toString()) {
+			println ""
+			print "Robot is already sleeping"
+		}
+		else {
+			this.status = Status.sleep.toString()
+			println ""
+			print "Robot go to sleep"
+		}
+	}
+	
+	def wake() {
+		if (this.status == Status.active.toString()) {
+			println ""
+			print "Robot is already awakening"
+		}
+		else {
+			this.status = Status.active.toString()
+			println ""
+			print "Robot is awakening"
+		}
+	}
+	
+	def sleeping(String s) {
+		println ""
+		print "Robot can't $s: it's sleeping"
 	}
 
 }

@@ -12,8 +12,9 @@ import robot.Mode
 import robot.Instrument
 import robot.Tempos
 import robot.Tempo
+import robot.Status
 
-my_robot = new Robot()
+my_robot = new Robot(Status.active.toString())
 
 def binding = new Binding([
 	robot: my_robot,
@@ -57,6 +58,8 @@ def binding = new Binding([
 	vivace: new Tempo(Tempos.vivace.toString()),
 	presto: new Tempo(Tempos.presto.toString()),
 	prestissimo: new Tempo(Tempos.prestissimo.toString()),
+	wake: my_robot.&wake,
+	Sleep: my_robot.&sleep
 ])
 
 Integer.metaClass.getCm = {
