@@ -42,6 +42,10 @@ public class Robot {
 		
 		println ""
 		print "Swimming $dir"
+		
+		if(info.stroke != null) {
+			this.stroke(info.stroke)
+		}
 
 		if(info.with != null) {
 			this.with(info.with)
@@ -51,6 +55,10 @@ public class Robot {
 		}
 		
 		this
+	}
+	
+	def stroke(Stroke stroke) {
+		print " stroke $stroke"
 	}
 	
 	def with(Animals animals) {
